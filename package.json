@@ -36,18 +36,18 @@
         "url": "https://github.com/StartBootstrap/startbootstrap-clean-blog.git"
     },
     "dependencies": {
-        "bootstrap": "5.2.3"
+        "bootstrap": "5.3.8"
     },
     "devDependencies": {
-        "autoprefixer": "10.4.14",
-        "browser-sync": "^2.26.2",
-        "chokidar": "3.5.3",
-        "concurrently": "6.3.0",
-        "postcss": "8.4.31",
-        "prettier": "2.8.6",
+        "autoprefixer": "10.4.21",
+        "browser-sync": "^3.0.4",
+        "chokidar": "4.0.3",
+        "concurrently": "9.2.1",
+        "postcss": "8.5.6",
+        "prettier": "2.8.8",
         "pug": "^3.0.3",
-        "sass": "1.60.0",
-        "shelljs": "0.8.5",
+        "sass": "1.92.1",
+        "shelljs": "0.10.0",
         "upath": "2.0.1"
     }
 }
