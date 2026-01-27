@@ -53,7 +53,7 @@ export default function Navbar(): React.JSX.Element {
                         <Typography
                             variant="h6"
                             sx={{
-                                color: 'white',
+                                color: isScrolled ? "black" : "white",
                                 fontFamily: fontStyle,
                                 fontWeight: 800,
                                 letterSpacing: '-0.5px',
@@ -72,7 +72,7 @@ export default function Navbar(): React.JSX.Element {
                                 component={Link}
                                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                                 sx={{
-                                    color: "white",
+                                    color: isScrolled ? "black" : "white",
                                     fontFamily: '"Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif',
                                     fontWeight: 800,
                                     fontSize: "0.75rem",
