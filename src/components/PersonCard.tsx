@@ -1,23 +1,8 @@
 import * as React from "react";
-import { type ModEntry } from "../Types.ts";
+import {type Person} from "../Types.ts";
 import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
-import {getModrinthDownloads} from "../apis/ApiProvider.ts";
-import {useEffect, useState} from "react";
 
-export default function ModEntryCard({ entry }: { entry: ModEntry }): React.JSX.Element {
-    const [downloads, setDownloads] = useState(0);
-
-    useEffect((): void => {
-        const loadDownloads: () => Promise<void> = async (): Promise<void> => {
-            try {
-                setDownloads(await getModrinthDownloads(entry.modrinthSlug));
-            } catch (e) {
-                console.error(e);
-            }
-        }
-        void loadDownloads();
-    }, [entry.modrinthSlug]);
-
+export default function PersonCard({ person }: { person: Person }): React.JSX.Element {
     return (
         <Box
             sx={{
@@ -52,18 +37,17 @@ export default function ModEntryCard({ entry }: { entry: ModEntry }): React.JSX.
                     }}
                 >
                     <CardActionArea sx={{ height: "100%" }}>
-                        <CardMedia
-                            component="img"
-                            image={entry.logo}
-                            alt={`${entry.name} logo`}
-                            sx={{ height: 140, objectFit: "contain" }}
-                        />
                         <CardContent>
                             <Typography variant="h6" sx={{ fontWeight: 700 }}>
-                                {entry.name}
+                                {person.name} - {person.role}
                             </Typography>
-                            <Typography>{entry.description}</Typography>
                         </CardContent>
+                        <CardMedia
+                            component="img"
+                            image={person.image}
+                            alt={`${person.name} logo`}
+                            sx={{ height: 140, objectFit: "contain" }}
+                        />
                     </CardActionArea>
                 </Card>
 
@@ -81,16 +65,9 @@ export default function ModEntryCard({ entry }: { entry: ModEntry }): React.JSX.
                     }}
                 >
                     <CardContent sx={{ flex: 1, display: "grid", alignContent: "center", gap: 1 }}>
-                        <Typography variant="h6" sx={{ fontWeight: 800 }}>
-                            {entry.name}
+                        <Typography>
+                            {person.description}
                         </Typography>
-
-                        <Typography color="text.secondary">
-                            Modrinth Downloads: {downloads}
-                        </Typography>
-
-                        {/* Example: reuse description or add fields from entry */}
-                        <Typography sx={{ mt: 1 }}>{entry.description}</Typography>
                     </CardContent>
                 </Card>
             </Box>

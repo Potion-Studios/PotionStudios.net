@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.tsx'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import RootLayout from "./RootLayout.tsx";
+import About from "./pages/about.tsx";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
                     window.location.href = "https://www.patreon.com/potionstudios";
                     return null;
                 }
+            },
+            {
+                path: "about",
+                element: <About />
             }
         ]
     }

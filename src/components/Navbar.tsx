@@ -45,7 +45,7 @@ export default function Navbar(): React.JSX.Element {
                             src={logo}
                             alt="Potion Studios Logo"
                             sx={{
-                                height: isScrolled ? 35 : 45,
+                                height: isScrolled ? 55 : 75,
                                 width: "auto",
                                 transition: "height 0.3s ease-in-out",
                             }}
