@@ -66,7 +66,7 @@ export default function Navbar(): React.JSX.Element {
                     </Box>
 
                     <Box sx={{ display: 'flex', gap: 2 }}>
-                        {["Home", "About", "Discord", "Support us"].map((item: string): React.JSX.Element => (
+                        {["Home", "About", "Discord", "Modrinth", "GitHub", "Support us"].map((item: string): React.JSX.Element => (
                             <Button
                                 key={item}
                                 component={Link}

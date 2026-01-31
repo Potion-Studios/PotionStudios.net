@@ -23,6 +23,20 @@ const router = createBrowserRouter([
                 }
             },
             {
+                path: "modrinth",
+                loader: (): null => {
+                    window.location.href = "https://modrinth.com/organization/potion-studios";
+                    return null;
+                }
+            },
+            {
+                path: "github",
+                loader: (): null => {
+                    window.location.href = "https://github.com/Potion-Studios";
+                    return null;
+                }
+            },
+            {
                 path: "support-us",
                 loader: (): null => {
                     window.location.href = "https://www.patreon.com/potionstudios";

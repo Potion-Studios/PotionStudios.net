@@ -37,8 +37,8 @@ export default function Carousel(): React.JSX.Element {
                             }}
                         >
                             <Container>
-                                <Typography variant="h2" sx={{ fontWeight: 800 }}>{slide.title}</Typography>
-                                <Typography variant="h5" sx={{ mt: 2, fontStyle: 'italic' }}>{slide.subtitle}</Typography>
+                                <Typography variant="h2" sx={{ fontWeight: 1000 }}>Potion Studios</Typography>
+                                <Typography variant="h5" sx={{ mt: 2, fontStyle: 'italic' }}>Minecraft Mod Development Studio</Typography>
                             </Container>
                         </Box>
                     </SwiperSlide>
