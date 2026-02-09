@@ -7,7 +7,7 @@ import ModEntryCard from "./components/ModEntryCard.tsx";
 import * as React from "react";
 import type {ModEntry} from "./Types.ts";
 
-function App(): ReactElement {
+export default function App(): ReactElement {
   return (
       <Box sx={{ width: '100vw', margin: 0, padding: 0 }}>
       <Carousel />
@@ -28,5 +28,3 @@ function App(): ReactElement {
     </Box>
   )
 }
-
-export default App

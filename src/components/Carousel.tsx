@@ -37,7 +37,21 @@ export default function Carousel(): React.JSX.Element {
                             }}
                         >
                             <Container>
-                                <Typography variant="h2" sx={{ fontWeight: 1000 }}>Potion Studios</Typography>
+                                <Typography
+                                    variant="h1"
+                                    sx={{
+                                        fontFamily: '"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                                        fontSize: {
+                                            xs: '3rem',
+                                            lg: '5rem'
+                                        },
+                                        fontWeight: 800,
+                                        textAlign: 'center',
+                                        color: '#ffffff',
+                                    }}
+                                >
+                                    Potion Studios
+                                </Typography>
                                 <Typography variant="h5" sx={{ mt: 2, fontStyle: 'italic' }}>Minecraft Mod Development Studio</Typography>
                             </Container>
                         </Box>

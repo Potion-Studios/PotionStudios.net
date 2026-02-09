@@ -4,6 +4,9 @@ import {Container, AppBar, Toolbar, Typography, Button, Box} from "@mui/material
 import {Link} from "react-router-dom";
 import logo from "../assets/potionstudios.png";
 
+type NavItem =
+    | { label: string; type: "internal"; to: string }
+    | { label: string; type: "external"; href: string };
 
 export default function Navbar(): React.JSX.Element {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -17,6 +20,15 @@ export default function Navbar(): React.JSX.Element {
     }, []);
 
     const fontStyle = '"Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif';
+
+    const navItems: NavItem[] = [
+        { label: "Home", type: "internal", to: "/" },
+        { label: "About", type: "internal", to: "/about" },
+        { label: "Discord", type: "external", href: "https://discord.com/invite/vP3PBGvgdW" },
+        { label: "Modrinth", type: "external", href: "https://modrinth.com/organization/potion-studios" },
+        { label: "GitHub", type: "external", href: "https://github.com/Potion-Studios" },
+        { label: "Support us", type: "external", href: "https://www.patreon.com/potionstudios" },
+    ];
 
     return (
         <AppBar
@@ -65,28 +77,42 @@ export default function Navbar(): React.JSX.Element {
                         </Typography>
                     </Box>
 
-                    <Box sx={{ display: 'flex', gap: 2 }}>
-                        {["Home", "About", "Discord", "Modrinth", "GitHub", "Support us"].map((item: string): React.JSX.Element => (
-                            <Button
-                                key={item}
-                                component={Link}
-                                to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                                sx={{
-                                    color: isScrolled ? "black" : "white",
-                                    fontFamily: '"Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif',
-                                    fontWeight: 800,
-                                    fontSize: "0.75rem",
-                                    letterSpacing: "1px",
-                                    padding: '10px 20px',
-                                    '&:hover': {
-                                        color: "rgba(255,255,255,0.7)",
-                                        backgroundColor: 'transparent'
-                                    }
-                                }}
-                            >
-                                {item}
-                            </Button>
-                        ))}
+                    <Box sx={{ display: "flex", gap: 2 }}>
+                        {navItems.map((item: NavItem): React.JSX.Element => {
+                            const commonSx = {
+                                color: isScrolled ? "black" : "white",
+                                fontFamily: '"Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif',
+                                fontWeight: 800,
+                                fontSize: "0.75rem",
+                                letterSpacing: "1px",
+                                padding: "10px 20px",
+                                "&:hover": {
+                                    color: "rgba(255,255,255,0.7)",
+                                    backgroundColor: "transparent",
+                                },
+                            } as const;
+
+                            if (item.type === "external") {
+                                return (
+                                    <Button
+                                        key={item.label}
+                                        component="a"
+                                        href={item.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        sx={commonSx}
+                                    >
+                                        {item.label}
+                                    </Button>
+                                );
+                            }
+
+                            return (
+                                <Button key={item.label} component={Link} to={item.to} sx={commonSx}>
+                                    {item.label}
+                                </Button>
+                            );
+                        })}
                     </Box>
                 </Toolbar>
             </Container>
