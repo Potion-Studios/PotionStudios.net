@@ -1,6 +1,7 @@
 import gourImg from "./assets/gour.png";
 import forestImg from "./assets/forest1.png";
 import villageImg from "./assets/pvillage.png";
+import cragGardensImg from "./assets/cragGardens.png";
 import bwglogo from "./assets/OTBWG.png"
 import byglogo from "./assets/OTBYG.png"
 import wwglogo from "./assets/WWG.png"
@@ -15,10 +16,11 @@ import ISSAC from "./assets/issac.png"
 import type {ModEntry, Person} from "./Types.ts";
 
 
-export const HomePageImages: { url: string, title: string, subtitle: string }[] = [
-    { url: gourImg, title: 'IronWood Gour', subtitle: 'A mysterious new wood type' },
-    { url: forestImg, title: 'Lush Forest', subtitle: 'Explore dense greenery' },
-    { url: villageImg, title: 'Pumpkin Patch Village', subtitle: 'Cozy autumn vibes' }
+export const HomePageImages: { url: string, title: string }[] = [
+    { url: gourImg, title: 'IronWood Gour' },
+    { url: forestImg, title: 'Lush Forest' },
+    { url: villageImg, title: 'Pumpkin Patch Village' },
+    { url: cragGardensImg, title: 'Crag Gardens' }
 ];
 
 export const ModEntries: ModEntry[] = [
