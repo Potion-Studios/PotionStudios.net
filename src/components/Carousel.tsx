@@ -21,7 +21,7 @@ export default function Carousel(): React.JSX.Element {
                 loop={true}
                 style={{ height: '100%', width: '100%' }}
             >
-                {HomePageImages.map((slide: { url: string, title: string, subtitle: string }, index: number): React.JSX.Element => (
+                {HomePageImages.map((slide: Slide, index: number): React.JSX.Element => (
                     <SwiperSlide key={index}>
                         <Box
                             sx={{
@@ -60,4 +60,9 @@ export default function Carousel(): React.JSX.Element {
             </Swiper>
         </Box>
     );
+}
+
+export type Slide = {
+    url: string
+    title: string
 }

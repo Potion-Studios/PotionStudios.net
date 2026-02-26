@@ -14,9 +14,10 @@ import YABOICHIPS from "./assets/Chips.png"
 import RETRO from "./assets/retro.png"
 import ISSAC from "./assets/issac.png"
 import type {ModEntry, Person} from "./Types.ts";
+import type {Slide} from "./components/Carousel.tsx";
 
 
-export const HomePageImages: { url: string, title: string }[] = [
+export const HomePageImages: Slide[] = [
     { url: gourImg, title: 'IronWood Gour' },
     { url: forestImg, title: 'Lush Forest' },
     { url: villageImg, title: 'Pumpkin Patch Village' },
