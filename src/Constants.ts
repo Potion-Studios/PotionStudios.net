@@ -29,7 +29,7 @@ export const ModEntries: ModEntry[] = [
     { name: "Oh The Biomes You'll Go", logo: byglogo, description: "Oh The Biomes You'll Go is an exploration and adventure mod designed to take you on a road trip across Minecraft like no other! Explore over 80 magical, realistic, and breathtaking biomes.", modrinthSlug: "uE1WpIAk" },
     { name: "All The Wood We've Got", logo: wwglogo, description: "All The Wood We've Got is a Side mod for Oh The Biomes We've Gone that adds in More Wood Block Variants. Such as Chests, Trapped Chests, Ladders and Barrels. With more Planned!", modrinthSlug: "qvq8iHWh" },
     { name: "Wayfinder", logo: wayfinderlogo, description: "A brand new immersive way to explore! The Wayfinder will guide those who are lost to their destinations.", modrinthSlug: "909sOSOR" },
-    { name: "Nether Descent", logo: ndlogo, description: "Coming Soon", modrinthSlug: "OMC5QQv5"}
+    { name: "Nether Descent", logo: ndlogo, description: "Nether Descent is a brand new nether biome mod by the Potion Studios team, truly an adventure like no other awaits you with new biomes, mobs, blocks, items, and more!", modrinthSlug: "OMC5QQv5"}
 ];
 
 export const People: Person[] = [
